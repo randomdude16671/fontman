@@ -91,10 +91,10 @@ in
     fonts.fontconfig = {
       enable = cfg.enable;
       defaultFonts = {
-        monospace = [ cfg.monospace.name ];
-        serif = [ cfg.serif.name ];
-        sansSerif = [ cfg.sansSerif.name ];
-        emoji = [ cfg.emoji.name ];
+        monospace = [ cfg.fonts.monospace.name ];
+        serif = [ cfg.fonts.serif.name ];
+        sansSerif = [ cfg.fonts.sansSerif.name ];
+        emoji = [ cfg.fonts.emoji.name ];
       };
     };
   };
