@@ -68,33 +68,34 @@ in
       type = types.listOf types.package;
     };
 
-    config = lib.mkIf cfg.enable {
-      fonts.packages =
-        let
-          inherit (cfg) extraPackages;
-          inherit (cfg.fonts)
-            monospace
-            serif
-            sansSerif
-            emoji
-            ;
-        in
-        [
-          monospace.package
-          serif.package
-          sansSerif.package
-          emoji.package
-        ]
-        ++ extraPackages;
-      fonts.fontconfig = {
-        enable = cfg.enable;
-        defaultFonts = lib.getAttrs [
-          "monospace"
-          "serif"
-          "sansSerif"
-          "emoji"
-        ] (family: [ cfg.fonts.${family}.name ]);
-      };
+  };
+
+  config = lib.mkIf cfg.enable {
+    fonts.packages =
+      let
+        inherit (cfg) extraPackages;
+        inherit (cfg.fonts)
+          monospace
+          serif
+          sansSerif
+          emoji
+          ;
+      in
+      [
+        monospace.package
+        serif.package
+        sansSerif.package
+        emoji.package
+      ]
+      ++ extraPackages;
+    fonts.fontconfig = {
+      enable = cfg.enable;
+      defaultFonts = lib.getAttrs [
+        "monospace"
+        "serif"
+        "sansSerif"
+        "emoji"
+      ] (family: [ cfg.fonts.${family}.name ]);
     };
   };
 }
