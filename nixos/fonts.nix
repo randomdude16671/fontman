@@ -90,12 +90,12 @@ in
       ++ extraPackages;
     fonts.fontconfig = {
       enable = cfg.enable;
-      defaultFonts = lib.getAttrs [
-        "monospace"
-        "serif"
-        "sansSerif"
-        "emoji"
-      ] (family: [ cfg.fonts.${family}.name ]);
+      defaultFonts = {
+        monospace = [ cfg.monospace.name ];
+        serif = [ cfg.serif.name ];
+        sansSerif = [ cfg.sansSerif.name ];
+        emoji = [ cfg.emoji.name ];
+      };
     };
   };
 }
