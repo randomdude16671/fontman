@@ -7,7 +7,7 @@
     { self, nixpkgs, ... }:
     {
       nixosModules = rec {
-        fontman = ./modules/nixos;
+        fontman = ./nixos;
         default = fontman;
       };
     };
