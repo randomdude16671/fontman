@@ -39,13 +39,13 @@ in
       type = types.submodule {
         options = {
           serif = mkFontOptions {
-            displayName = "Serif";
             name = "DejaVu Serif";
+            displayName = "Serif";
             package = "dejavu_fonts";
           };
           sansSerif = mkFontOptions {
-            displayName = "Sans Serif";
             name = "Adwaita Sans";
+            displayName = "Sans Serif";
             package = "adwaita-fonts";
           };
           monospace = mkFontOptions {
@@ -54,8 +54,8 @@ in
             package = "nerd-fonts.iosevka-term";
           };
           emoji = mkFontOptions {
+            name = "Noto Color Emoji";
             displayName = "Emoji";
-            fontName = "Noto Color Emoji";
             package = "noto-fonts-color-emoji";
           };
         };
